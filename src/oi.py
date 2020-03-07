@@ -7,6 +7,7 @@ from commands.toggle_camera import ToggleCamera
 from commands.differentialdrive_with_xbox import DifferentialDriveWithXbox
 from commands.invert_front import InvertFront
 from commands.shoot import Shoot
+from commands.block import Block
 import wpilib
 #import wpilib.interfaces._interfaces.GenericHID
 from wpilib.buttons import JoystickButton
@@ -29,8 +30,10 @@ class OI:
 
         stickbutton = StickButton(robot.xbox0, .1)
         shoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
+        block = JoystickButton(robot.xbox0, XboxController.Button.kY)
 
         togglecamera = JoystickButton(robot.xbox0, XboxController.Button.kStart)
         togglecamera.whenPressed(ToggleCamera(robot))
         stickbutton.whenPressed(DifferentialDriveWithXbox(robot))
         shoot.whileHeld(Shoot(robot))
+        block.toggleWhenPressed(Block(robot))
