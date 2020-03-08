@@ -90,14 +90,14 @@ Do the following steps to get a working Python system installed and set up for [
 
 1. Launch VS Code and install the following extensions (hint: ```File -> Preferences -> Extensions```):
 		
-	a. Microsoft "*Python*"
-	a. David Houchin's "*Whitespace+*"
-	a. Dmitry Dorofeev's "*empty-indent*"
-	a. Kevin Rose's "*Python Indent*"
-	a. g3rry's "*Paste and Indent*"
-	a. oderwat's "*indent-rainbow*"
-	a. Thomas Haakon Townsend's "*Python for VSCode*"
-	a. Alexander Vassilev's "*Tab Anywhere*"
+	1. Microsoft "*Python*"
+	1. David Houchin's "*Whitespace+*"
+	1. Dmitry Dorofeev's "*empty-indent*"
+	1. Kevin Rose's "*Python Indent*"
+	1. g3rry's "*Paste and Indent*"
+	1. oderwat's "*indent-rainbow*"
+	1. Thomas Haakon Townsend's "*Python for VSCode*"
+	1. Alexander Vassilev's "*Tab Anywhere*"
 
 1. Configure VS Code to use the proper version of Python:
 
