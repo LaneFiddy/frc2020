@@ -17,7 +17,7 @@ class MyRobot(CommandBasedRobot):
         '''Initialize all subsystems.'''
         self.drivetrain = DriveTrain(self)
         self.shooter = Shooter(self)
-        
+
         # The "front" of the robot (which end is facing forward)
         self.front = -1
 
