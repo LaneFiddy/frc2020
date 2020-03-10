@@ -101,7 +101,7 @@ Do the following steps to get a working Python system installed and set up for [
 
 1. Configure VS Code to use the proper version of Python:
 
-	```Ctrl+Shift+P``` -> *python select interpreter* -> ```~/frc2020/pyfrc/bin/python5```
+	```Ctrl+Shift+P``` -> *python select interpreter* -> ```~/frc2020/pyfrc/bin/python3```
 
 1. Configure VS Code to use the proper linter:
 
