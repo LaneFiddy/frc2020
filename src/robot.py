@@ -7,6 +7,8 @@ from commandbased import CommandBasedRobot
 from wpilib.command import Scheduler
 from subsystems.drivetrain import DriveTrain
 from subsystems.shooter import Shooter
+from subsystems.intake_sub import Intake_Sub
+from subsystems.shifter import Shifter
 from oi import OI
 
 class MyRobot(CommandBasedRobot):
@@ -17,6 +19,8 @@ class MyRobot(CommandBasedRobot):
         '''Initialize all subsystems.'''
         self.drivetrain = DriveTrain(self)
         self.shooter = Shooter(self)
+        self.intake_sub = Intake_Sub(self)
+        self.shifter = Shifter(self)
 
         # The "front" of the robot (which end is facing forward)
         self.front = -1

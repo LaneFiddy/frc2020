@@ -5,7 +5,6 @@ import math
 
 import wpilib, rev
 from wpilib.command import Subsystem
-from wpilib.drive import DifferentialDrive
 
 class Shooter(Subsystem):
     """Operate the drivetrain."""
