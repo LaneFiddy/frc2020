@@ -48,11 +48,11 @@ Do the following steps to get a working Python system installed and set up for [
 
 1. Permanently modify your search path variable to make sure you use the desired version of Python3 and other tools (*it's okay to copy & paste this command*):
 
-		echo -e "$PATH\nexport PATH" >> ~/.profile
+		echo -e "PATH=$PATH\nexport PATH" >> ~/.profile
 		
 1. Permanently save your Python *virtual environment* setting:
 
-		echo -e "VIRTUAL_ENV='{$VIRTUAL_ENV}'\nexport VIRTUAL_ENV" >> ~/.profile
+		echo -e "VIRTUAL_ENV='${VIRTUAL_ENV}'\nexport VIRTUAL_ENV" >> ~/.profile
 		
 	You'll have to change this in ~/.profile when you create a new Python *virtual environment*.
 	
