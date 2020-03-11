@@ -16,7 +16,7 @@ class Intake_Com(Command):
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
-        print("in execute")
+        print("intake execute")
         self.robot.intake_sub.intake()
 
     def isFinished(self):

@@ -18,7 +18,6 @@ class DifferentialDriveWithXbox(Command):
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
-        print("in execute")
         self.robot.drivetrain.driveManual(self.robot.xbox0)
 
     def isFinished(self):

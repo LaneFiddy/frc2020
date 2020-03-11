@@ -34,7 +34,7 @@ class OI:
         stickbutton = StickButton(robot.xbox0, .1)
         shoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
         block = JoystickButton(robot.xbox0, XboxController.Button.kY)
-        intake = JoystickButton(robot.xbox0, XboxController.Button.kX)
+        intake = JoystickButton(robot.xbox1, XboxController.Button.kX)
         shiftup = JoystickButton(robot.xbox0, XboxController.Button.kBumperRight)
         shiftdown = JoystickButton(robot.xbox0, XboxController.Button.kBumperLeft)
 

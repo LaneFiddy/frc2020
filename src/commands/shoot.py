@@ -17,7 +17,6 @@ class Shoot(Command):
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
-        print("in execute")
         self.robot.shooter.shoot()
 
     def isFinished(self):
