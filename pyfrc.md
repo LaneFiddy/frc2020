@@ -16,7 +16,7 @@ Do the following steps to get a working Python system installed and set up for [
 
 		sudo apt install git python3-dev python3.7-dev python3-pip virtualenv python3-virtualenv
 	
-1. Make sure python3.7 is the default version so that every time you type ```python3``` you use version 3.7:
+1. Make sure python3.7 is the default version so that every time you type ```python3``` you use version 3.7 (, *it's okay to copy & paste these commands*):
 
 		sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 		sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
@@ -46,13 +46,13 @@ Do the following steps to get a working Python system installed and set up for [
 
 		source ./bin/activate
 
-1. Permanently modify your search path variable to make sure you use the desired version of Python3 and other tools (*it's okay to copy & paste this command*):
+1. Permanently modify your search path variable (```$PATH```) to make sure you use the desired version of Python3 and other tools (*it's okay to copy & paste this command*):
 
-		echo -e "PATH=$PATH\nexport PATH" >> ~/.profile
+		echo -e "PATH=$PATH\nexport PATH" >> ~/.bashrc
 		
-1. Permanently save your Python *virtual environment* setting:
+1. Permanently save your Python *virtual environment* setting (the $VIRTUAL_ENV variable):
 
-		echo -e "VIRTUAL_ENV='${VIRTUAL_ENV}'\nexport VIRTUAL_ENV" >> ~/.profile
+		echo -e "VIRTUAL_ENV=${VIRTUAL_ENV}\nexport VIRTUAL_ENV" >> ~/.bashrc
 		
 	You'll have to change this in ~/.profile when you create a new Python *virtual environment*.
 	
