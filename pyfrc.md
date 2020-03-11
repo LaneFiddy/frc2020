@@ -66,7 +66,7 @@ Do the following steps to get a working Python system installed and set up for [
 		
 	(You should see something like ```pip 20.0.2 from /home/dklann/frc2020/pyfrc/lib/python3.7/site-packages/pip (python 3.7)``` with *your* username instead of *dklann*)
 		
-1. Install the pyfrc Python package and its dependencies:
+1. Install the pyfrc Python package and its dependencies. We are using the [binary install](https://robotpy.readthedocs.io/en/stable/install/pyfrc.html#binary-install) method and the precompiled packages are installed from [www.tortall.net](https://www.tortall.net/~robotpy/wheels/2020/linux_x86_64/). That site is where we will get other vendor libraries if we need them
 
 		pip3 install --find-links https://www.tortall.net/~robotpy/wheels/2020/linux_x86_64/ pyfrc robotpy-rev robotpy-rev-color robotpy-navx remi robotpy_ctre robotpy-commands-v1 coverage pylint
 
