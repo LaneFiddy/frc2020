@@ -6,7 +6,7 @@ do what we want it to do.
 from commands.toggle_camera import ToggleCamera
 from commands.differentialdrive_with_xbox import DifferentialDriveWithXbox
 from commands.invert_front import InvertFront
-from commands.shoot import Shoot
+from commands.releaseshoot import ReleaseShoot
 from commands.block import Block
 from commands.intake_com import Intake_Com
 from commands.shiftup import ShiftUp
@@ -41,7 +41,7 @@ class OI:
         togglecamera = JoystickButton(robot.xbox0, XboxController.Button.kStart)
         togglecamera.whenPressed(ToggleCamera(robot))
         stickbutton.whenPressed(DifferentialDriveWithXbox(robot))
-        shoot.whileHeld(Shoot(robot))
+        shoot.whileHeld(ReleaseShoot(robot))
         block.toggleWhenPressed(Block(robot))
         intake.whileHeld(Intake_Com(robot))
         shiftup.whenPressed(ShiftUp(robot))

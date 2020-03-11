@@ -3,21 +3,21 @@
 
 from wpilib.command import Command
 
-class Block(Command):
+class StopShooting(Command):
     '''Drive differentially with an Xbox controller.'''
     def __init__(self, robot):
         '''Save the robot object and pull in the drivetrain subsystem.'''
         super().__init__()
 
         self.robot = robot
-        self.requires(self.robot.blocker)
+        self.requires(self.robot.shooter)
 
     def initialize(self):
         """Called just before this Command runs the first time"""
-        self.robot.blocker.block()
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
+        self.robot.shooter.stopShooting()
 
     def isFinished(self):
         """Make this return true when this Command no longer needs to
@@ -26,7 +26,7 @@ class Block(Command):
 
     def end(self):
         """Called once after isFinished returns true"""
-        self.robot.blocker.release()
+        self.robot.shooter.stopShooting()
 
     def interrupted(self):
         """Called when another command which requires one or more of

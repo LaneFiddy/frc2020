@@ -3,7 +3,7 @@
 import math
 
 import wpilib
-from ctre import WPI_TalonSRX
+from ctre import WPI_VictorSPX
 from wpilib.command import Subsystem
 
 class Intake_Sub(Subsystem):
@@ -15,7 +15,7 @@ class Intake_Sub(Subsystem):
         super().__init__(name = "intake")
         self.robot = robot
 
-        self.motor = ctre.WPI_TalonSRX(7)
+        self.motor = WPI_VictorSPX(7)
 
     def intake(self):
         self.motor.set(1.0)
