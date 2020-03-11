@@ -68,7 +68,7 @@ Do the following steps to get a working Python system installed and set up for [
 		
 1. Install the pyfrc Python package and its dependencies:
 
-		pip3 install --find-links https://www.tortall.net/~robotpy/wheels/2020/linux_x86_64/ pyfrc robotpy-rev robotpy-rev-color robotpy-navx remi robotpy-commands-v1 coverage pylint
+		pip3 install --find-links https://www.tortall.net/~robotpy/wheels/2020/linux_x86_64/ pyfrc robotpy-rev robotpy-rev-color robotpy-navx remi robotpy_ctre robotpy-commands-v1 coverage pylint
 
 1. Clone the Thorbots 2020 robot [repo](https://github.com/WestbyThorbots/frc2020.git) from [GitHub](https://github.com/):
 
