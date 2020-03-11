@@ -11,6 +11,8 @@ from commands.block import Block
 from commands.intake_com import Intake_Com
 from commands.shiftup import ShiftUp
 from commands.shiftdown import ShiftDown
+from commands.climbwithtriggers import Climbwithtriggers
+from commands.extendclimber import Extendclimber
 import wpilib
 #import wpilib.interfaces._interfaces.GenericHID
 from wpilib.buttons import JoystickButton
@@ -37,6 +39,8 @@ class OI:
         intake = JoystickButton(robot.xbox1, XboxController.Button.kX)
         shiftup = JoystickButton(robot.xbox0, XboxController.Button.kBumperRight)
         shiftdown = JoystickButton(robot.xbox0, XboxController.Button.kBumperLeft)
+        triggerbutton = TriggerButton(robot.xbox1, .1)
+        extendclimber = JoystickButton(robot.xbox1, XboxController.Button.kA)
 
         togglecamera = JoystickButton(robot.xbox0, XboxController.Button.kStart)
         togglecamera.whenPressed(ToggleCamera(robot))
@@ -46,3 +50,5 @@ class OI:
         intake.whileHeld(Intake_Com(robot))
         shiftup.whenPressed(ShiftUp(robot))
         shiftdown.whenPressed(ShiftDown(robot))
+        triggerbutton.whenPressed(Climbwithtriggers(robot))
+        extendclimber.toggleWhenPressed(Extendclimber(robot))

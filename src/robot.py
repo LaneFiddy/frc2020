@@ -10,6 +10,8 @@ from subsystems.shooter import Shooter
 from subsystems.blocker import Blocker
 from subsystems.intake_sub import Intake_Sub
 from subsystems.shifter import Shifter
+from subsystems.climbmotors import Climbmotors
+from subsystems.climbpistons import Climbpistons
 from oi import OI
 
 class MyRobot(CommandBasedRobot):
@@ -23,6 +25,8 @@ class MyRobot(CommandBasedRobot):
         self.intake_sub = Intake_Sub(self)
         self.shifter = Shifter(self)
         self.blocker = Blocker(self)
+        self.climbmotors = Climbmotors(self)
+        self.climbpistons = Climbpistons(self)
 
         # The "front" of the robot (which end is facing forward)
         self.front = -1
