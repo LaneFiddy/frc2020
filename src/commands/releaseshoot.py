@@ -10,7 +10,6 @@ from wpilib.command import WaitCommand
 
 class ReleaseShoot(CommandGroup):
     def __init(self, robot):
-        super().__init__()
         self.addSequential(Shoot(robot))
         self.addSequential(WaitCommand(timeout=0.3))
         self.addSequential(Unblock(robot))
