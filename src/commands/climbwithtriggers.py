@@ -16,7 +16,7 @@ class Climbwithtriggers(Command):
         pass
 
     def execute(self):
-        self.robot.climbmotors.climb(self.xbox0)
+        self.robot.climbmotors.climb(self.xbox1)
 
     def isFinished(self):
         #Make this return true when this Command no longer needs to run execute()
