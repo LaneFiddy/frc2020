@@ -16,8 +16,7 @@ class Climbmotors(Subsystem):
 
     def climb(self, xboxcontroller):
         self.motor2.follow(self.motor1)
-        self.motor1.set(xboxcontroller.getTriggerAxis(GenericHID.Hand.kRightHand)-xboxcontroller.getTriggerAxis(GenericHID.Hand.kLeftHand))
-
+        self.motor1.set(xboxcontroller.getTriggerAxis(GenericHID.Hand.kRightHand)-(xboxcontroller.getTriggerAxis(GenericHID.Hand.kLeftHand)))
 
     def stop(self):
         self.motor2.follow(self.motor1)

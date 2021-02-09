@@ -26,7 +26,7 @@ class DriveTrain(Subsystem):
         self.rightB = rev.CANSparkMax(4, rev.CANSparkMax.MotorType.kBrushless)
 
         # TODO: switch to DifferentialDrive is the main object that deals with driving
-        self.drive = DifferentialDrive(self.left, self.rightB)
+        self.drive = DifferentialDrive(self.left, self.right)
 
         #TODO: These probably will not be the actual ports used
         self.left_encoder = wpilib.Encoder(2, 3)
