@@ -20,6 +20,7 @@ class Shooter(Subsystem):
         self.bottom = rev.CANSparkMax(10, rev.CANSparkMax.MotorType.kBrushless)
 
     def shoot(self):
+        print("shooting")
         self.top.set(.6)
         self.bottom.set(1.0)
 

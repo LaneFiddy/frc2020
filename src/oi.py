@@ -35,21 +35,25 @@ class OI:
         robot.xbox1 = wpilib.XboxController(1)
 
         stickbutton = StickButton(robot.xbox0, .1)
-        shoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
+        #shoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
         block = JoystickButton(robot.xbox0, XboxController.Button.kY)
         intake = JoystickButton(robot.xbox0, XboxController.Button.kX)
         shiftup = JoystickButton(robot.xbox0, XboxController.Button.kBumperRight)
         shiftdown = JoystickButton(robot.xbox0, XboxController.Button.kBumperLeft)
         triggerbutton = TriggerButton(robot.xbox1, .1)
         extendclimber = JoystickButton(robot.xbox1, XboxController.Button.kA)
+       
+        releaseshoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
+
 
         togglecamera = JoystickButton(robot.xbox0, XboxController.Button.kStart)
         togglecamera.whenPressed(ToggleCamera(robot))
         stickbutton.whenPressed(DifferentialDriveWithXbox(robot))
-        shoot.whileHeld(Shoot(robot))
+        #shoot.whileHeld(Shoot(robot))
         block.toggleWhenPressed(Block(robot))
         intake.whileHeld(Intake_Com(robot))
         shiftup.whenPressed(ShiftUp(robot))
         shiftdown.whenPressed(ShiftDown(robot))
         triggerbutton.whenPressed(Climbwithtriggers(robot))
         extendclimber.toggleWhenPressed(Extendclimber(robot))
+        releaseshoot.whileHeld(ReleaseShoot())
