@@ -14,10 +14,12 @@ class Shoot(Command):
 
     def initialize(self):
         """Called just before this Command runs the first time"""
+        print ("shoot initialize")
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
         self.robot.shooter.shoot()
+        print ("shooot execute")
 
     def isFinished(self):
         """Make this return true when this Command no longer needs to
@@ -31,4 +33,5 @@ class Shoot(Command):
     def interrupted(self):
         """Called when another command which requires one or more of
         the same subsystems is scheduled to run"""
+        self.robot.shooter.stopShooting()
         self.end()

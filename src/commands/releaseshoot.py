@@ -2,17 +2,18 @@
 '''Drive differentially with an Xbox controller.'''
 
 from wpilib.command import CommandGroup
-import commands
+from .shoot import Shoot
+from .stopshooting import StopShooting
+from .block import Block
+from .unblock import Unblock
 from wpilib.command import WaitCommand
 
 class ReleaseShoot(CommandGroup):
-    def __init(self, robot):
+    def __init__(self, robot):
         super().__init__()
+        self.robot = robot
 
-        self.addSequential(commands.Shoot(robot))
-        self.addSequential(WaitCommand(timeout=0.3))
-        self.addSequential(commands.Unblock(robot))
-        self.addSequential(WaitCommand(timeout=5))
-        #TODO: figure out how long the shooter needs to run in order to empty
-        self.addSequential(commands.StopShooting(robot))
-        self.addParallel(commands.Block(robot))
+        self.addSequential(Shoot(robot), 2.0)
+        self.addSequential(Unblock(robot), 10.0)
+        self.addSequential(StopShooting(robot))
+        self.addParallel(Block(robot))

@@ -14,10 +14,12 @@ class StopShooting(Command):
 
     def initialize(self):
         """Called just before this Command runs the first time"""
+        self.robot.shooter.stopShooting()
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
         self.robot.shooter.stopShooting()
+        print ("stop shooting")
 
     def isFinished(self):
         """Make this return true when this Command no longer needs to
