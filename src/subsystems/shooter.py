@@ -15,7 +15,6 @@ class Shooter(Subsystem):
         super().__init__(name = "shooter")
         self.robot = robot
 
-        # Motors used for driving
         self.top = rev.CANSparkMax(9, rev.CANSparkMax.MotorType.kBrushless)
         self.bottom = rev.CANSparkMax(10, rev.CANSparkMax.MotorType.kBrushless)
 

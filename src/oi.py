@@ -56,4 +56,5 @@ class OI:
         shiftdown.whenPressed(ShiftDown(robot))
         triggerbutton.whenPressed(Climbwithtriggers(robot))
         extendclimber.toggleWhenPressed(Extendclimber(robot))
-        releaseshoot.whileHeld(ReleaseShoot())
+
+        releaseshoot.whileHeld(ReleaseShoot(robot))
