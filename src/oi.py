@@ -4,7 +4,7 @@ This is where the rubber meets the road: make the Xbox controller
 do what we want it to do.
 '''
 from commands.toggle_camera import ToggleCamera
-from commands.differentialdrive_with_xbox import DifferentialDriveWithXbox
+from commands.drive_with_xbox import DifferentialDriveWithXbox
 from commands.invert_front import InvertFront
 from commands.releaseshoot import ReleaseShoot
 from commands.shoot import Shoot

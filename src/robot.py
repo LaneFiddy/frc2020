@@ -12,6 +12,7 @@ from subsystems.intake_sub import Intake_Sub
 from subsystems.shifter import Shifter
 from subsystems.climbmotors import Climbmotors
 from subsystems.climbpistons import Climbpistons
+from commands.drive_autonomous import DriveAutonomous
 from oi import OI
 
 class MyRobot(CommandBasedRobot):
@@ -28,6 +29,10 @@ class MyRobot(CommandBasedRobot):
         self.climbmotors = Climbmotors(self)
         self.climbpistons = Climbpistons(self)
 
+
+        self.autoChooser = wpilib.SendableChooser()
+        self.autoChooser.setDefaultOption("Drive", DriveAutonomous(self))
+
         # The "front" of the robot (which end is facing forward)
         self.front = -1
 
@@ -41,6 +46,8 @@ class MyRobot(CommandBasedRobot):
         return super().disabledPeriodic()
 
     def autonomousInit(self):
+        self.autonomousCommand = self.autoChooser.getSelected()
+        self.autonomousCommand.start()
         '''Initialize systems when entering Autonomous Mode.'''
 
     def autonomousPeriodic(self):

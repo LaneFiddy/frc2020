@@ -51,6 +51,12 @@ class DriveTrain(Subsystem):
         #self.rightB.follow(self.right, followerType=0)
         self.drive.arcadeDrive(-xboxcontroller.getY(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand), xboxcontroller.getX(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand))
 
+    def driveForward(self, distance, speed):
+        if (self.left_encoder.getDistance() + self.right_encoder.getDistance())/2 < distance:
+            self.drive.arcadeDrive(speed, speed)
+        else:
+            self.drive.arcadeDrive(0.0, 0.0)
+
     def getHeading(self):
         """Get the robot's heading in degrees"""
         return self.gyro.getAngle()
