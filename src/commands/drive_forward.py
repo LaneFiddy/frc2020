@@ -17,7 +17,7 @@ class DriveForward(Command):
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
-        self.robot.drivetrain.driveDistance()
+        self.robot.drivetrain.driveForward(10)
 
     def isFinished(self):
         """Make this return true when this Command no longer needs to
@@ -26,7 +26,7 @@ class DriveForward(Command):
 
     def end(self):
         """Called once after isFinished returns true"""
-        #self.robot.drivetrain.driveManual(0, 0)
+        self.robot.drivetrain.stopDriving()
 
     def interrupted(self):
         """Called when another command which requires one or more of
