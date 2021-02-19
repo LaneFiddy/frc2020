@@ -9,6 +9,7 @@ from .unblock import Unblock
 from wpilib.command import WaitCommand
 
 class ReleaseShoot(CommandGroup):
+    #TODO:The drive team would like this timing to change. Ask them for more info.
     def __init__(self, robot):
         super().__init__()
         self.robot = robot
