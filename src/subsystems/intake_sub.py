@@ -18,7 +18,7 @@ class Intake_Sub(Subsystem):
         self.motor = WPI_VictorSPX(7)
 
     def intake(self):
-        self.motor.set(1.0)
+        self.motor.set(0.7)
 
     def stop(self):
         self.motor.set(0)

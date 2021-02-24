@@ -7,6 +7,7 @@ from commands.toggle_camera import ToggleCamera
 from commands.drive_with_xbox import DifferentialDriveWithXbox
 from commands.invert_front import InvertFront
 from commands.releaseshoot import ReleaseShoot
+from commands.cuntake import Cuntake
 from commands.shoot import Shoot
 from commands.block import Block
 from commands.intake_com import Intake_Com
@@ -44,6 +45,7 @@ class OI:
         extendclimber = JoystickButton(robot.xbox1, XboxController.Button.kA)
        
         #releaseshoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
+        eject = JoystickButton(robot.xbox0, XboxController.Button.kB)
 
 
         togglecamera = JoystickButton(robot.xbox0, XboxController.Button.kStart)
@@ -58,3 +60,4 @@ class OI:
         extendclimber.toggleWhenPressed(Extendclimber(robot))
 
         #releaseshoot.whileHeld(ReleaseShoot(robot))
+        eject.whileHeld(Cuntake(robot))

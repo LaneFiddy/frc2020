@@ -50,7 +50,6 @@ class DriveTrain(Subsystem):
         #self.leftB.follow(self.left, followerType=0)
         #self.rightB.follow(self.right, followerType=0)
         self.drive.arcadeDrive(-xboxcontroller.getY(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand), xboxcontroller.getX(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand))
-        print("heading is " + self.gyro.getAngle())
 
     def driveForward(self, dist):
             self.drive.tankDrive(.5,.5)

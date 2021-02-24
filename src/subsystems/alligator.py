@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""#!/usr/bin/env python3
 
 import math
 
@@ -7,11 +7,11 @@ from ctre import WPI_VictorSPX
 from wpilib.command import Subsystem
 
 class Alligator(Subsystem):
-    """Operate the drivetrain."""
+    Operate the drivetrain.
 
     def __init__(self, robot):
-        """Save the robot object, and assign and save hardware ports
-        connected to the drive motors."""
+        Save the robot object, and assign and save hardware ports
+        connected to the drive motors.
         super().__init__(name = "intake")
         self.robot = robot
 
@@ -21,4 +21,4 @@ class Alligator(Subsystem):
         self.motor.set(1.0)
 
     def calm(self):
-        self.motor.set(0)
+        self.motor.set(0)"""
