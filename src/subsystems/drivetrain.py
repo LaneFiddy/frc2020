@@ -49,6 +49,7 @@ class DriveTrain(Subsystem):
     def driveManual(self, xboxcontroller):
         #self.leftB.follow(self.left, followerType=0)
         #self.rightB.follow(self.right, followerType=0)
+        #TODO: I'm not sure if these followers should be on or not. Let's find that out.
         self.drive.arcadeDrive(-xboxcontroller.getY(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand), xboxcontroller.getX(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand))
 
     def driveForward(self, dist):

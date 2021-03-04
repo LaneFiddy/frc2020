@@ -8,6 +8,7 @@ from commands.drive_with_xbox import DifferentialDriveWithXbox
 from commands.invert_front import InvertFront
 from commands.releaseshoot import ReleaseShoot
 from commands.cuntake import Cuntake
+from commands.alligate import Alligate
 from commands.shoot import Shoot
 from commands.block import Block
 from commands.intake_com import Intake_Com
@@ -37,6 +38,7 @@ class OI:
 
         stickbutton = StickButton(robot.xbox0, .1)
         shoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
+        alligate = JoystickButton(robot.xbox0, XboxController.Button.kA)
         block = JoystickButton(robot.xbox0, XboxController.Button.kY)
         intake = JoystickButton(robot.xbox0, XboxController.Button.kX)
         shiftup = JoystickButton(robot.xbox0, XboxController.Button.kBumperRight)
@@ -52,6 +54,7 @@ class OI:
         togglecamera.whenPressed(ToggleCamera(robot))
         stickbutton.whenPressed(DifferentialDriveWithXbox(robot))
         shoot.whileHeld(Shoot(robot))
+        alligate.whileHeld(Alligate(robot))
         block.toggleWhenPressed(Block(robot))
         intake.whileHeld(Intake_Com(robot))
         shiftup.whenPressed(ShiftUp(robot))
