@@ -12,6 +12,9 @@ from subsystems.intake_sub import Intake_Sub
 from subsystems.shifter import Shifter
 from subsystems.climbmotors import Climbmotors
 from subsystems.climbpistons import Climbpistons
+
+from subsystems.agitator import Agitator
+
 from commands.drive_autonomous import DriveAutonomous
 from oi import OI
 
@@ -28,6 +31,7 @@ class MyRobot(CommandBasedRobot):
         self.blocker = Blocker(self)
         self.climbmotors = Climbmotors(self)
         self.climbpistons = Climbpistons(self)
+        self.agitator = Agitator(self)
 
 
         self.autoChooser = wpilib.SendableChooser()

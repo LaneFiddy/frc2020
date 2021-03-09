@@ -8,7 +8,6 @@ from commands.drive_with_xbox import DifferentialDriveWithXbox
 from commands.invert_front import InvertFront
 from commands.releaseshoot import ReleaseShoot
 from commands.cuntake import Cuntake
-from commands.alligate import Alligate
 from commands.shoot import Shoot
 from commands.block import Block
 from commands.intake_com import Intake_Com
@@ -17,6 +16,9 @@ from commands.shiftdown import ShiftDown
 from commands.climbwithtriggers import Climbwithtriggers
 from commands.extendclimber import Extendclimber
 import wpilib
+
+from commands.agitate import Agitate
+
 #import wpilib.interfaces._interfaces.GenericHID
 from wpilib.buttons import JoystickButton
 from wpilib import XboxController
@@ -38,13 +40,15 @@ class OI:
 
         stickbutton = StickButton(robot.xbox0, .1)
         shoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
-        alligate = JoystickButton(robot.xbox0, XboxController.Button.kA)
         block = JoystickButton(robot.xbox0, XboxController.Button.kY)
         intake = JoystickButton(robot.xbox0, XboxController.Button.kX)
         shiftup = JoystickButton(robot.xbox0, XboxController.Button.kBumperRight)
         shiftdown = JoystickButton(robot.xbox0, XboxController.Button.kBumperLeft)
         triggerbutton = TriggerButton(robot.xbox1, .1)
         extendclimber = JoystickButton(robot.xbox1, XboxController.Button.kA)
+
+        agitate = JoystickButton(robot.xbox0, XboxController.Button.kA)
+
        
         #releaseshoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
         eject = JoystickButton(robot.xbox0, XboxController.Button.kB)
@@ -54,13 +58,14 @@ class OI:
         togglecamera.whenPressed(ToggleCamera(robot))
         stickbutton.whenPressed(DifferentialDriveWithXbox(robot))
         shoot.whileHeld(Shoot(robot))
-        alligate.whileHeld(Alligate(robot))
         block.toggleWhenPressed(Block(robot))
         intake.whileHeld(Intake_Com(robot))
         shiftup.whenPressed(ShiftUp(robot))
         shiftdown.whenPressed(ShiftDown(robot))
         triggerbutton.whenPressed(Climbwithtriggers(robot))
         extendclimber.toggleWhenPressed(Extendclimber(robot))
+
+        agitate.whileHeld(Agitate(robot))
 
         #releaseshoot.whileHeld(ReleaseShoot(robot))
         eject.whileHeld(Cuntake(robot))
