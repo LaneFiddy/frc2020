@@ -3,8 +3,7 @@
 
 import math
 
-#from ctre import WPI_VictorSRX
-import ctre
+from ctre import WPI_VictorSPX
 from wpilib.command import Subsystem
 
 class Agitator(Subsystem):
@@ -15,7 +14,7 @@ class Agitator(Subsystem):
         super().__init__(name = "agitator")
         self.robot = robot
 
-        self.motor = ctre.TalonSRX(11)
+        self.motor = WPI_VictorSPX(11)
 
     def agitate(self):
         self.motor.set(1.0)
