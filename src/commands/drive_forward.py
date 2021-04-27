@@ -3,7 +3,7 @@
 
 from wpilib.command import Command
 
-class DriveForward(Command):
+class DriveReverse(Command):
     '''Drive differentially with an Xbox controller.'''
     def __init__(self, robot):
         '''Save the robot object and pull in the drivetrain subsystem.'''
@@ -17,7 +17,7 @@ class DriveForward(Command):
 
     def execute(self):
         """Called repeatedly when this Command is scheduled to run."""
-        self.robot.drivetrain.driveForward(10)
+        self.robot.drivetrain.driveReverse(0)
 
     def isFinished(self):
         """Make this return true when this Command no longer needs to
