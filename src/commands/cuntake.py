@@ -21,7 +21,7 @@ class Cuntake(Command):
 
     def isFinished(self):
         """Make this return true when this Command no longer needs to
-        run execute()"""
+        run execute()"
         return False  # Runs until interrupted
 
     def end(self):
