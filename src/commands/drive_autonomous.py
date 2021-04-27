@@ -12,3 +12,4 @@ class DriveAutonomous(CommandGroup):
         self.robot = robot
 
         self.addSequential(DriveForward(robot), 2.0)
+        self.addSequential(Shoot(robot), 2.0)
