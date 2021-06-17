@@ -52,8 +52,11 @@ class DriveTrain(Subsystem):
         #TODO: I'm not sure if these followers should be on or not. Let's find that out.
         self.drive.arcadeDrive(-xboxcontroller.getY(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand), xboxcontroller.getX(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand))
 
-    def driveReverse(self, dist):
+    def driveReverse(self):
             self.drive.tankDrive(-.3,-.3)
+
+    def driveForward(self):
+        self.drive.tankDrive(.3,.3)
 
     def stopDriving(self):
         self.drive.tankDrive(0,0)
