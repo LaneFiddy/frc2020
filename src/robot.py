@@ -15,9 +15,6 @@ from subsystems.climbpistons import Climbpistons
 
 from subsystems.agitator import Agitator
 
-#from commands.auto_backup_shoot import AutoBackupShoot
-#from commands.auto_far_left import AutoFarLeft
-#from commands.auto_shoot import AutoShoot
 from oi import OI
 
 class MyRobot(CommandBasedRobot):
@@ -34,13 +31,6 @@ class MyRobot(CommandBasedRobot):
         self.climbmotors = Climbmotors(self)
         self.climbpistons = Climbpistons(self)
         self.agitator = Agitator(self)
-
-
-        #self.autoChooser = wpilib.SendableChooser()
-        #self.autoChooser.setDefaultOption("BackupShoot", AutoBackupShoot(self))
-        #self.autoChooser.addOption("BackupShoot", AutoBackupShoot(self))
-        #self.autoChooser.addOption("FarLeft", AutoFarLeft(self))
-        #self.autoChooser.addOption("Shoot", AutoShoot(self))
 
         # The "front" of the robot (which end is facing forward)
         self.front = -1
