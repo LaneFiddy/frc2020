@@ -37,7 +37,7 @@ class MyRobot(CommandBasedRobot):
         self.climbpistons = Climbpistons(self)
         self.agitator = Agitator(self)
 
-        self.autoChooser - wpilib.SendableChooser()
+        self.autoChooser = wpilib.SendableChooser()
         self.autoChooser.setDefaultOption("Default", AutoBackupShoot)
 
         # The "front" of the robot (which end is facing forward)

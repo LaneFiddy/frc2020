@@ -2,7 +2,7 @@
 
 from wpilib.command import CommandGroup
 from wpilib.command import WaitCommand
-from .shoot import shoot
+from subsystems.shooter import Shooter
 from .unblock import Unblock
 from .drive_reverse import DriveReverse
 
