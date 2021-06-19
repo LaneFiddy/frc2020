@@ -17,7 +17,7 @@ from commands.climbwithtriggers import Climbwithtriggers
 from commands.extendclimber import Extendclimber
 import wpilib
 
-from commands.agitate import Agitate
+#qfrom commands.agitate import Agitate
 
 #import wpilib.interfaces._interfaces.GenericHID
 from wpilib.buttons import JoystickButton
@@ -47,7 +47,7 @@ class OI:
         triggerbutton = TriggerButton(robot.xbox1, .1)
         extendclimber = JoystickButton(robot.xbox1, XboxController.Button.kA)
 
-        agitate = JoystickButton(robot.xbox0, XboxController.Button.kA)
+        #agitate = JoystickButton(robot.xbox0, XboxController.Button.kA)
 
        
         #releaseshoot = JoystickButton(robot.xbox0, XboxController.Button.kA)
@@ -65,7 +65,7 @@ class OI:
         triggerbutton.whenPressed(Climbwithtriggers(robot))
         extendclimber.toggleWhenPressed(Extendclimber(robot))
 
-        agitate.whileHeld(Agitate(robot))
+        #agitate.whileHeld(Agitate(robot))
 
         #releaseshoot.whileHeld(ReleaseShoot(robot))
         eject.whileHeld(Cuntake(robot))

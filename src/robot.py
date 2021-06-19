@@ -53,7 +53,7 @@ class MyRobot(CommandBasedRobot):
         return super().disabledPeriodic()
 
     def autonomousInit(self):
-        self.autonomousCommand = self.autoChooser.getSelected()
+        self.autonomousCommand = AutoFarLeft(self)
         self.autonomousCommand.start()
         '''Initialize systems when entering Autonomous Mode.'''
 
