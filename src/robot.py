@@ -18,6 +18,7 @@ from subsystems.agitator import Agitator
 from commands.auto_backup_shoot import AutoBackupShoot
 from commands.auto_far_left import AutoFarLeft
 from commands.auto_far_right import AutoFarRight
+from commands.auto_center_low_goal import AutoCenterLowGoal
 from commands.auto_shoot import AutoShoot
 
 from oi import OI
@@ -38,7 +39,12 @@ class MyRobot(CommandBasedRobot):
         self.agitator = Agitator(self)
 
         self.autoChooser = wpilib.SendableChooser()
+        self.autoChooser.addOption("Far Left", AutoFarLeft)
+        self.autoChooser.addOption("Far Right", AutoFarRight)
+        self.autoChooser.addOption("Center", AutoShoot)
+        self.autoChooser.addOption("Center Low Goal", AutoCenterLowGoal)
         self.autoChooser.setDefaultOption("Default", AutoBackupShoot)
+        wpilib.SmartDashboard.putData('Select Autonomous...', self.autoChooser)
 
         # The "front" of the robot (which end is facing forward)
         self.front = -1
@@ -53,7 +59,7 @@ class MyRobot(CommandBasedRobot):
         return super().disabledPeriodic()
 
     def autonomousInit(self):
-        self.autonomousCommand = AutoFarLeft(self)
+        self.autonomousCommand = self.autoChooser.getSelected()
         self.autonomousCommand.start()
         '''Initialize systems when entering Autonomous Mode.'''
 
