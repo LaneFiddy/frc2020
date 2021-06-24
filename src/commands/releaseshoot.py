@@ -14,7 +14,8 @@ class ReleaseShoot(CommandGroup):
         super().__init__()
         self.robot = robot
 
-        self.addSequential(Shoot(robot), 2.0)
+        self.addParallel(Shoot(robot), 6.0)
+        self.addParallel(WaitCommand(2.0))
         self.addSequential(Unblock(robot), 10.0)
-        self.addSequential(StopShooting(robot))
-        self.addParallel(Block(robot))
+        #self.addSequential(StopShooting(robot), 1.0)
+        self.addSequential(Block(robot), 1.0)
