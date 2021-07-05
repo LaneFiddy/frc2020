@@ -19,6 +19,7 @@ from commands.auto_backup_shoot import AutoBackupShoot
 from commands.auto_far_left import AutoFarLeft
 from commands.auto_far_right import AutoFarRight
 from commands.auto_center_low_goal import AutoCenterLowGoal
+from commands.center import Center
 from commands.auto_shoot import AutoShoot
 
 from oi import OI
