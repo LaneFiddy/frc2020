@@ -51,6 +51,8 @@ class DriveTrain(Subsystem):
         #self.rightB.follow(self.right, followerType=0)
         #TODO: I'm not sure if these followers should be on or not. Let's find that out.
         self.drive.arcadeDrive(-xboxcontroller.getY(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand), xboxcontroller.getX(wpilib.interfaces._interfaces.GenericHID.Hand.kLeftHand))
+        self.leftB.follow(self.left)
+        self.rightB.follow(self.right)
 
     def driveReverse(self):
             self.drive.tankDrive(-.5,-.5)
