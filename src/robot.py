@@ -38,13 +38,14 @@ class MyRobot(CommandBasedRobot):
         self.climbpistons = Climbpistons(self)
         self.agitator = Agitator(self)
 
-        self.autoChooser = wpilib.SendableChooser()
-        self.autoChooser.addOption("Far Left", AutoFarLeft)
+        wpilib.SmartDashboard.putStringArray("Auto List", ["Far Left", "Far Right", "Center", "Center Low Goal", "Default"])
+
+        """self.autoChooser.addOption("Far Left", AutoFarLeft)
         self.autoChooser.addOption("Far Right", AutoFarRight)
         self.autoChooser.addOption("Center", AutoShoot)
         self.autoChooser.addOption("Center Low Goal", AutoCenterLowGoal)
         self.autoChooser.setDefaultOption("Default", AutoBackupShoot)
-        wpilib.SmartDashboard.putData('Select Autonomous...', self.autoChooser)
+        wpilib.SmartDashboard.putData('Select Autonomous...', self.autoChooser)"""
 
         # The "front" of the robot (which end is facing forward)
         self.front = -1
@@ -59,8 +60,20 @@ class MyRobot(CommandBasedRobot):
         return super().disabledPeriodic()
 
     def autonomousInit(self):
-        self.autonomousCommand = self.autoChooser.getSelected()
-        self.autonomousCommand.start()
+        self.autoChooser = wpilib.SmartDashboard.getString("Auto Selector", "AutoBackupShoot")
+        if self.autoChooser == "Far Left":
+            autonomousCommand = AutoFarLeft(self)
+        elif self.autoChooser == "Far Right":
+            autonomousCommand = AutoFarRight(self)
+        elif self.autoChooser == "Center":
+            autonomousCommand = Center(self)
+        elif self.autoChooser == "Center":
+            autonomousCommand = Center(self)
+        elif self.autoChooser == "Center Low Goal":
+            autonomousCommand = AutoCenterLowGoal(self)
+        else:
+            autonomousCommand = AutoFarLeft(self)
+        autonomousCommand.start()
         '''Initialize systems when entering Autonomous Mode.'''
 
     def autonomousPeriodic(self):
