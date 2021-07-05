@@ -67,8 +67,6 @@ class MyRobot(CommandBasedRobot):
             autonomousCommand = AutoFarRight(self)
         elif self.autoChooser == "Center":
             autonomousCommand = Center(self)
-        elif self.autoChooser == "Center":
-            autonomousCommand = Center(self)
         elif self.autoChooser == "Center Low Goal":
             autonomousCommand = AutoCenterLowGoal(self)
         else:
